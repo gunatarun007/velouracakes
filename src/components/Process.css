@@ -52,9 +52,14 @@
    STEP CARD
    ───────────────────────────────────────── */
 
+/* ─────────────────────────────────────────
+   STEP CARD
+   ───────────────────────────────────────── */
+
 .process-step {
     position: relative;
     cursor: pointer;
+    outline: none;
 }
 
 .step-image {
@@ -71,7 +76,8 @@
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.process-step:hover .step-image img {
+.process-step:hover .step-image img,
+.process-step:focus .step-image img {
     transform: scale(1.08);
 }
 
@@ -91,7 +97,8 @@
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.process-step:hover .step-overlay {
+.process-step:hover .step-overlay,
+.process-step:focus .step-overlay {
     opacity: 1;
 }
 
@@ -105,7 +112,8 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.process-step:hover .step-number {
+.process-step:hover .step-number,
+.process-step:focus .step-number {
     transform: translateY(0);
 }
 

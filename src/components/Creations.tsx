@@ -48,7 +48,7 @@ export default function Creations() {
                 <div className="creations-grid">
                     {creations.map((item, index) => (
                         <Reveal key={item.id} delay={index * 100}>
-                            <article className="creation-item">
+                            <article className="creation-item" tabIndex={0}>
                                 <div className="creation-image">
                                     <img src={item.image} alt={item.name} loading="lazy" />
                                     {/* Dark overlay with text on hover */}

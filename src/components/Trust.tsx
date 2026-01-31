@@ -33,7 +33,7 @@ export default function Trust() {
                 </div>
 
                 <Reveal>
-                    <div className="trust-image">
+                    <div className="trust-image" tabIndex={0}>
                         <img
                             src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80"
                             alt="Our bakery team at work"

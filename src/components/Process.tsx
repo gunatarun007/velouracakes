@@ -51,7 +51,7 @@ export default function Process() {
                 <div className="process-steps">
                     {steps.map((step, index) => (
                         <Reveal key={step.number} delay={index * 150}>
-                            <article className="process-step">
+                            <article className="process-step" tabIndex={0}>
                                 <div className="step-image">
                                     <img src={step.image} alt={step.title} loading="lazy" />
                                     <div className="step-overlay">

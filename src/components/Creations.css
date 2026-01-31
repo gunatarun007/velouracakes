@@ -67,9 +67,15 @@
    CREATION ITEM
    ───────────────────────────────────────── */
 
+/* ─────────────────────────────────────────
+   CREATION ITEM
+   ───────────────────────────────────────── */
+
 .creation-item {
     position: relative;
     cursor: pointer;
+    outline: none;
+    /* Remove default focus ring, we'll use overlay as feedback */
 }
 
 .creation-image {
@@ -85,7 +91,8 @@
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.creation-item:hover .creation-image img {
+.creation-item:hover .creation-image img,
+.creation-item:focus .creation-image img {
     transform: scale(1.08);
 }
 
@@ -110,7 +117,8 @@
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.creation-item:hover .creation-overlay {
+.creation-item:hover .creation-overlay,
+.creation-item:focus .creation-overlay {
     opacity: 1;
 }
 
@@ -124,7 +132,8 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
 }
 
-.creation-item:hover .creation-overlay-name {
+.creation-item:hover .creation-overlay-name,
+.creation-item:focus .creation-overlay-name {
     transform: translateY(0);
 }
 
@@ -137,7 +146,8 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
 }
 
-.creation-item:hover .creation-overlay-desc {
+.creation-item:hover .creation-overlay-desc,
+.creation-item:focus .creation-overlay-desc {
     transform: translateY(0);
 }
 
@@ -154,7 +164,8 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
 }
 
-.creation-item:hover .creation-overlay-cta {
+.creation-item:hover .creation-overlay-cta,
+.creation-item:focus .creation-overlay-cta {
     transform: translateY(0);
 }
 
