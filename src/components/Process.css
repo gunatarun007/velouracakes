@@ -95,13 +95,15 @@
     align-items: flex-end;
     justify-content: flex-start;
     padding: var(--space-6);
-    opacity: 0;
+    opacity: 1;
+    /* Visible by default */
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .process-step:hover .step-overlay,
 .process-step:focus .step-overlay {
-    opacity: 1;
+    opacity: 0;
+    /* Hide on hover to reveal clean image */
 }
 
 .step-number {
@@ -110,13 +112,15 @@
     font-weight: var(--font-light);
     color: var(--color-gold);
     line-height: 1;
-    transform: translateY(20px);
+    transform: translateY(0);
+    /* Natural position by default */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .process-step:hover .step-number,
 .process-step:focus .step-number {
-    transform: translateY(0);
+    transform: translateY(20px);
+    /* Slide down on hover */
 }
 
 /* Content */
