@@ -1,0 +1,202 @@
+/* ============================================
+   DELIVERY SECTION STYLES
+   ============================================ */
+
+.delivery-section {
+    background: var(--color-white);
+}
+
+/* ─────────────────────────────────────────
+   DELIVERY BANNER
+   ───────────────────────────────────────── */
+
+.delivery-banner {
+    padding: var(--space-8);
+    background: rgba(255, 246, 241, 0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .delivery-banner {
+        padding: var(--space-10) var(--space-12);
+    }
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .banner-content {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.banner-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-xl);
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.banner-subtitle {
+    font-size: var(--text-base);
+    max-width: 500px;
+}
+
+@media (min-width: 768px) {
+    .banner-subtitle {
+        font-size: var(--text-lg);
+    }
+}
+
+.banner-cta {
+    flex-shrink: 0;
+}
+
+/* Countdown Ribbon */
+.countdown-ribbon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+    background: var(--gradient-cta);
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+    .countdown-ribbon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        border-radius: 0;
+        padding: var(--space-3) var(--space-6);
+    }
+}
+
+.countdown-label,
+.countdown-text {
+    font-size: var(--text-sm);
+    opacity: 0.9;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.time-unit {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.time-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+}
+
+.time-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+}
+
+.time-separator {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ─────────────────────────────────────────
+   CITIES SECTION
+   ───────────────────────────────────────── */
+
+.cities-section {
+    margin-top: var(--space-12);
+    text-align: center;
+}
+
+.cities-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-width: 800px;
+    margin: 0 auto var(--space-6);
+}
+
+@media (min-width: 640px) {
+    .cities-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.city-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-smooth);
+}
+
+.city-card:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.city-name {
+    font-weight: var(--font-semibold);
+    color: var(--color-chocolate);
+}
+
+.city-time {
+    font-size: var(--text-xs);
+    color: var(--color-cta-primary);
+}
+
+.cities-note {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+}

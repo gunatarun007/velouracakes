@@ -1,0 +1,228 @@
+/* ============================================
+   TESTIMONIALS SECTION STYLES
+   ============================================ */
+
+.testimonials-section {
+    background: var(--gradient-hero);
+    position: relative;
+}
+
+/* ─────────────────────────────────────────
+   SOCIAL PROOF
+   ───────────────────────────────────────── */
+
+.social-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-xl);
+}
+
+.proof-item {
+    text-align: center;
+}
+
+.proof-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-chocolate);
+    line-height: 1;
+}
+
+.proof-label {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+}
+
+.proof-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--color-gray-200);
+}
+
+@media (max-width: 640px) {
+    .proof-divider {
+        display: none;
+    }
+
+    .social-proof {
+        gap: var(--space-4);
+    }
+
+    .proof-item {
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+/* ─────────────────────────────────────────
+   CAROUSEL
+   ───────────────────────────────────────── */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    padding: var(--space-10);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+    .testimonial-card {
+        padding: var(--space-12) var(--space-16);
+    }
+}
+
+.testimonial-rating {
+    margin-bottom: var(--space-6);
+}
+
+.testimonial-rating .star {
+    font-size: var(--text-2xl);
+    color: var(--color-cta-gold);
+    margin-inline: 2px;
+}
+
+.testimonial-content {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-style: italic;
+    font-weight: var(--font-medium);
+    color: var(--color-chocolate);
+    line-height: var(--leading-relaxed);
+    max-width: 700px;
+    margin: 0 auto var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .testimonial-content {
+        font-size: var(--text-2xl);
+    }
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.author-avatar {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-hero);
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-name {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-chocolate);
+}
+
+.author-role {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border-radius: 50%;
+    font-size: var(--text-xl);
+    color: var(--color-chocolate);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-smooth);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--color-cream);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: var(--space-4);
+}
+
+.carousel-btn.next {
+    right: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-base);
+    }
+
+    .carousel-btn.prev {
+        left: var(--space-2);
+    }
+
+    .carousel-btn.next {
+        right: var(--space-2);
+    }
+}
+
+/* Dots Pagination */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(74, 44, 42, 0.2);
+    transition: all var(--transition-smooth);
+}
+
+.dot:hover {
+    background: rgba(74, 44, 42, 0.4);
+}
+
+.dot.active {
+    background: var(--color-cta-primary);
+    width: 32px;
+    border-radius: var(--radius-full);
+}

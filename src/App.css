@@ -1,0 +1,332 @@
+/* ============================================
+   APP-LEVEL STYLES - EDITORIAL LUXURY POLISH
+   ============================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main {
+  flex: 1;
+}
+
+/* ─────────────────────────────────────────
+   GRAIN TEXTURE OVERLAY
+   ───────────────────────────────────────── */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ─────────────────────────────────────────
+   MOBILE OVERLAY
+   ───────────────────────────────────────── */
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 22, 20, 0.5);
+  z-index: 999;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─────────────────────────────────────────
+   NAVIGATION - LUXURY SCROLL BEHAVIOR
+   ───────────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--space-6) 0;
+  background: transparent;
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    padding 0.4s ease,
+    border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+/* Scrolled State - Parchment with gold divider */
+.navbar--scrolled {
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid rgba(184, 160, 120, 0.2);
+}
+
+/* Menu Open State */
+.navbar--menu-open {
+  background: rgba(250, 247, 242, 0.98);
+  border-bottom: 1px solid rgba(184, 160, 120, 0.15);
+}
+
+.navbar--menu-open .nav-brand {
+  color: var(--color-cocoa);
+}
+
+/* Hidden State (scroll down) */
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─────────────────────────────────────────
+   BRAND LOGO - ENLARGED
+   ───────────────────────────────────────── */
+
+.nav-brand {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-light);
+  color: var(--color-cream);
+  letter-spacing: var(--tracking-wide);
+  transition:
+    color 0.4s ease,
+    font-size 0.4s ease;
+}
+
+.navbar--scrolled .nav-brand {
+  color: var(--color-cocoa);
+  font-size: var(--text-2xl);
+}
+
+/* ─────────────────────────────────────────
+   NAV LINKS - DESKTOP
+   ───────────────────────────────────────── */
+
+.nav-links--desktop {
+  display: none;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .nav-links--desktop {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: rgba(245, 240, 232, 0.85);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.4s ease;
+}
+
+.navbar--scrolled .nav-link {
+  color: var(--color-text-body);
+}
+
+/* Underline slide hover effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--color-cream);
+}
+
+.navbar--scrolled .nav-link:hover {
+  color: var(--color-cocoa);
+}
+
+/* CTA Link - Muted gold, no bright button */
+.nav-link--cta {
+  color: var(--color-gold);
+}
+
+.navbar--scrolled .nav-link--cta {
+  color: var(--color-gold-muted);
+}
+
+/* ─────────────────────────────────────────
+   NAV LINKS - MOBILE
+   ───────────────────────────────────────── */
+
+.nav-links--mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  background: rgba(250, 247, 242, 0.98);
+  border-top: 1px solid rgba(184, 160, 120, 0.1);
+}
+
+.nav-links--mobile.nav-links--open {
+  display: flex;
+}
+
+.nav-links--mobile .nav-link {
+  color: var(--color-cocoa);
+  font-size: var(--text-sm);
+  padding: var(--space-2) 0;
+}
+
+.nav-links--mobile .nav-link:hover {
+  color: var(--color-espresso);
+}
+
+.nav-links--mobile .nav-link--cta {
+  color: var(--color-gold-muted);
+}
+
+@media (min-width: 768px) {
+  .nav-links--mobile {
+    display: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   MOBILE TOGGLE (HAMBURGER)
+   ───────────────────────────────────────── */
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-2);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-cream);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.navbar--scrolled .nav-toggle span,
+.navbar--menu-open .nav-toggle span {
+  background: var(--color-cocoa);
+}
+
+/* X animation when active */
+.nav-toggle--active span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle--active span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────
+   FLOATING SOCIAL ICONS
+   ───────────────────────────────────────── */
+
+.social-float {
+  position: fixed;
+  right: var(--space-6);
+  top: 50%;
+  transform: translateY(-50%) translateX(100px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.social-float--visible {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}
+
+.social-float-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(250, 247, 242, 0.95);
+  border: 1px solid rgba(61, 46, 42, 0.1);
+  color: var(--color-cocoa);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-float-icon:hover {
+  background: var(--color-cocoa);
+  color: var(--color-cream);
+  border-color: var(--color-cocoa);
+  transform: scale(1.05);
+}
+
+.social-float-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .social-float {
+    display: none;
+  }
+}

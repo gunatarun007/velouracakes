@@ -1,0 +1,129 @@
+/* ============================================
+   PROCESS SECTION - EDITORIAL PHILOSOPHY
+   ============================================ */
+
+.process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   HEADER
+   ───────────────────────────────────────── */
+
+.process-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-16);
+}
+
+.process-title {
+    margin-bottom: var(--space-6);
+}
+
+.process-title em {
+    font-style: italic;
+    color: var(--color-gold);
+}
+
+.process-intro {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: rgba(232, 226, 216, 0.7);
+}
+
+/* ─────────────────────────────────────────
+   STEPS GRID
+   ───────────────────────────────────────── */
+
+.process-steps {
+    display: grid;
+    gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+/* ─────────────────────────────────────────
+   STEP CARD
+   ───────────────────────────────────────── */
+
+.process-step {
+    position: relative;
+    cursor: pointer;
+}
+
+.step-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    margin-bottom: var(--space-6);
+}
+
+.step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step:hover .step-image img {
+    transform: scale(1.08);
+}
+
+/* Dark Overlay with Number */
+.step-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(26, 22, 20, 0.85) 0%,
+            rgba(26, 22, 20, 0.4) 50%,
+            rgba(26, 22, 20, 0.2) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: var(--space-6);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step:hover .step-overlay {
+    opacity: 1;
+}
+
+.step-number {
+    font-family: var(--font-serif);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-light);
+    color: var(--color-gold);
+    line-height: 1;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step:hover .step-number {
+    transform: translateY(0);
+}
+
+/* Content */
+.step-content {
+    text-align: center;
+}
+
+.step-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-regular);
+    color: var(--color-cream);
+    margin-bottom: var(--space-2);
+}
+
+.step-desc {
+    font-size: var(--text-sm);
+    color: rgba(232, 226, 216, 0.6);
+    line-height: var(--leading-relaxed);
+}

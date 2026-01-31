@@ -1,0 +1,54 @@
+/* ============================================
+   QUOTE SECTION - EDITORIAL TYPOGRAPHY
+   ============================================ */
+
+.quote-section {
+    text-align: center;
+}
+
+.editorial-quote {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-text {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-style: italic;
+    font-weight: var(--font-light);
+    line-height: var(--leading-snug);
+    color: var(--color-cocoa);
+    margin-bottom: var(--space-10);
+}
+
+@media (min-width: 768px) {
+    .quote-text {
+        font-size: var(--text-3xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .quote-text {
+        font-size: var(--text-4xl);
+    }
+}
+
+.quote-author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.author-name {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    color: var(--color-cocoa);
+}
+
+.author-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-muted);
+}
