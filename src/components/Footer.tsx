@@ -103,7 +103,7 @@ export default function Footer() {
                 <div className="footer-creator">
                     <span className="creator-text">Design & Development —</span>
                     <a
-                        href="https://www.linkedin.com/in/gunatarun007"
+                        href="https://www.linkedin.com/in/taruntejaguna"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="creator-name"
@@ -113,7 +113,7 @@ export default function Footer() {
                     <div className="creator-icons">
                         {/* LinkedIn */}
                         <a
-                            href="https://www.linkedin.com/in/gunatarun007"
+                            href="https://www.linkedin.com/in/taruntejaguna"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="creator-icon"
