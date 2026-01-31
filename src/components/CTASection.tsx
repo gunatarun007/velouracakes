@@ -38,8 +38,8 @@ export default function CTASection() {
                 <Reveal>
                     <div className="cta-contact">
                         <p className="contact-label">Or reach us directly</p>
-                        <a href="tel:+919876543210" className="contact-phone">
-                            +91 98765 43210
+                        <a href="tel:+919182100688" className="contact-phone">
+                            +91 9182100688
                         </a>
                     </div>
                 </Reveal>

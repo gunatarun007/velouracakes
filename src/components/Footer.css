@@ -1,6 +1,6 @@
 /* ============================================
    FOOTER - DARK LUXURY EDITORIAL
-   LUXURY POLISH: Top divider, grain, enlarged logo
+   LUXURY POLISH: Creator branding, CTA button
    ============================================ */
 
 .footer-editorial {
@@ -123,6 +123,64 @@
 }
 
 /* ─────────────────────────────────────────
+   WORK WITH ME CTA BUTTON
+   ───────────────────────────────────────── */
+
+.footer-cta-section {
+    text-align: center;
+    margin-bottom: var(--space-10);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4) var(--space-10);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-gold-muted);
+    background: transparent;
+    border: 1px solid rgba(184, 160, 120, 0.4);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.footer-cta-btn:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+    box-shadow: 0 0 30px rgba(184, 160, 120, 0.2);
+}
+
+/* Gradient sweep animation */
+.footer-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(184, 160, 120, 0.1) 50%,
+            transparent 100%);
+    transition: left 0.6s ease;
+}
+
+.footer-cta-btn:hover::before {
+    left: 100%;
+}
+
+/* ─────────────────────────────────────────
    DIVIDER
    ───────────────────────────────────────── */
 
@@ -146,6 +204,7 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    margin-bottom: var(--space-8);
 }
 
 @media (min-width: 768px) {
@@ -176,4 +235,96 @@
 
 .social-link:hover {
     color: var(--color-gold);
+}
+
+/* ─────────────────────────────────────────
+   CREATOR CREDIT - SUBTLE BRANDING
+   ───────────────────────────────────────── */
+
+.footer-creator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--space-6);
+}
+
+.creator-text {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: rgba(232, 226, 216, 0.4);
+    letter-spacing: var(--tracking-wide);
+}
+
+.creator-name {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: rgba(184, 160, 120, 0.7);
+    letter-spacing: var(--tracking-wide);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.creator-name::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: rgba(184, 160, 120, 0.5);
+    transition: width 0.3s ease;
+}
+
+.creator-name:hover {
+    color: var(--color-gold);
+}
+
+.creator-name:hover::after {
+    width: 100%;
+}
+
+.creator-icons {
+    display: flex;
+    gap: var(--space-2);
+    margin-left: var(--space-2);
+}
+
+.creator-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: rgba(232, 226, 216, 0.4);
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.creator-icon:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+}
+
+.creator-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ─────────────────────────────────────────
+   ARTISTIC SIGNATURE
+   ───────────────────────────────────────── */
+
+.footer-signature {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    font-style: italic;
+    color: rgba(232, 226, 216, 0.35);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0.65;
 }
