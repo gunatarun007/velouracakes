@@ -68,6 +68,8 @@
     overflow: hidden;
     cursor: pointer;
     outline: none;
+    background-color: rgba(184, 160, 120, 0.1);
+    /* Warm beige placeholder */
 }
 
 .trust-image img {

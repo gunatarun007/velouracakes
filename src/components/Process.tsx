@@ -53,7 +53,18 @@ export default function Process() {
                         <Reveal key={step.number} delay={index * 150}>
                             <article className="process-step" tabIndex={0}>
                                 <div className="step-image">
-                                    <img src={step.image} alt={step.title} loading="lazy" />
+                                    <img
+                                        src={`${step.image}&w=600&q=80`}
+                                        srcSet={`
+                                            ${step.image}&w=300&q=70 300w,
+                                            ${step.image}&w=600&q=80 600w
+                                        `}
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        alt={step.title}
+                                        loading="lazy"
+                                        width="600"
+                                        height="600"
+                                    />
                                     <div className="step-overlay">
                                         <span className="step-number">{step.number}</span>
                                     </div>

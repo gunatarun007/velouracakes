@@ -82,6 +82,8 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: 4 / 5;
+    background-color: rgba(184, 160, 120, 0.1);
+    /* Warm beige placeholder */
 }
 
 .creation-image img {

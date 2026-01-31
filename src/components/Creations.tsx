@@ -50,7 +50,18 @@ export default function Creations() {
                         <Reveal key={item.id} delay={index * 100}>
                             <article className="creation-item" tabIndex={0}>
                                 <div className="creation-image">
-                                    <img src={item.image} alt={item.name} loading="lazy" />
+                                    <img
+                                        src={`${item.image}&w=800&q=80`}
+                                        srcSet={`
+                                            ${item.image}&w=400&q=70 400w,
+                                            ${item.image}&w=800&q=80 800w
+                                        `}
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        alt={item.name}
+                                        loading="lazy"
+                                        width="800"
+                                        height="1000"
+                                    />
                                     {/* Dark overlay with text on hover */}
                                     <div className="creation-overlay">
                                         <h3 className="creation-overlay-name">{item.name}</h3>

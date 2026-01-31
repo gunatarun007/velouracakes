@@ -21,9 +21,20 @@
     inset: -10%;
     z-index: 0;
     will-change: transform;
-    /* Replace with actual photography */
-    background:
-        url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&q=80') center center / cover no-repeat;
+    /* Placeholder color while loading */
+    background-color: var(--color-charcoal);
+    /* Mobile-first image (Smaller, faster) */
+    background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=70');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 769px) {
+    .hero-bg {
+        /* Desktop image (Full quality) */
+        background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&q=80');
+    }
 }
 
 /* Enhanced dark gradient overlay for readability */

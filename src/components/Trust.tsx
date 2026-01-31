@@ -36,8 +36,15 @@ export default function Trust() {
                     <div className="trust-image" tabIndex={0}>
                         <img
                             src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80"
+                            srcSet="
+                                https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=70 600w,
+                                https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80 1400w
+                            "
+                            sizes="(max-width: 768px) 100vw, 1200px"
                             alt="Our bakery team at work"
                             loading="lazy"
+                            width="1400"
+                            height="800"
                         />
                         {/* Dark overlay on hover */}
                         <div className="trust-overlay">
